@@ -5,8 +5,7 @@
   | | | |\/| | | | | ___ \  | |   | |/ _ \| '_ \ / _ \  |  _  ||  __/  | |       
  _| |_| |  | | |/ /| |_/ /  | \__/\ | (_) | | | |  __/  | | | || |    _| |_      
  \___/\_|  |_/___/ \____/    \____/_|\___/|_| |_|\___|  \_| |_/\_|    \___/ 
-                                                                          
-                                                                          
+                                                                                                                                                  
 ```
 # Welcome!
 
@@ -89,3 +88,11 @@ By following these steps, you'll have a well-structured and functional local dev
 
 ## Reference:
 [Django Rest Framework Documentation](https://www.django-rest-framework.org/)
+
+To initiate a new project:
+```
+django-admin startproject <project-name>
+```
+```
+python manage.py startapp <app-name>
+```

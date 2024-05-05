@@ -28,9 +28,3 @@ jobs:
 
       - name: Run tests
         run: python manage.py test
-
-      - name: Install coverage package
-        run: sudo pip install coverage
-
-      - name: Coverage report (optional)
-        run: coverage run --module --exclude tests manage.py test && coverage report

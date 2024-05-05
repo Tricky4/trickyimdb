@@ -1,0 +1,30 @@
+name: Deployment Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # You can choose a different OS
+
+    steps:
+      - uses: actions/checkout@v3  # Checkout your code from GitHub
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v3
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Make migrations
+        run: python manage.py makemigrations movielist_app
+
+      - name: Run migrations
+        run: python manage.py migrate
+
+      - name: Run tests
+        run: python manage.py test

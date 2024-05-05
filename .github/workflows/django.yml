@@ -1,4 +1,4 @@
-name: CI
+name: Deployment Test
 
 on:
   push:
@@ -15,10 +15,13 @@ jobs:
       - name: Set up Python environment
         uses: actions/setup-python@v3
         with:
-          python-version: '3.10'  # Replace '3.x' with your specific version
+          python-version: '3.10'
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Make migrations
+        run: python manage.py makemigrations movielist_app
 
       - name: Run migrations
         run: python manage.py migrate
